@@ -1,4 +1,4 @@
-package curuvija.com.petstore;
+package com.curuvija.petstore;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

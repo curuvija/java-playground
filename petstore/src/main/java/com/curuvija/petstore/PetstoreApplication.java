@@ -1,4 +1,4 @@
-package curuvija.com.petstore;
+package com.curuvija.petstore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
