@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Petstore DB Server",
+      "Group": "Petstore",
+      "Port": 5432,
+      "Username": "admin",
+      "Host": "db",
+      "SSLMode": "prefer",
+      "MaintenanceDB": "postgres"
+    }
+  }
+}
