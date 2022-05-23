@@ -1,0 +1,17 @@
+spring:
+  sql:
+    init:
+      platform: postgres
+  jpa:
+    database: postgresql
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:postgresql://localhost:5432/petstore
+    username: admin
+    password: admin
+    driverClassName: org.postgresql.Driver
+
+# pogledaj https://github.com/OKaluzny/spring-boot-rest-api-postgresql/blob/master/src/main/resources/application.yml
+# i ovo https://developer.okta.com/blog/2018/12/13/build-basic-app-spring-boot-jpa
