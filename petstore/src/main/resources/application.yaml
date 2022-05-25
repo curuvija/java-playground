@@ -1,4 +1,6 @@
 spring:
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
   sql:
     init:
       platform: postgres
@@ -12,6 +14,7 @@ spring:
     username: admin
     password: admin
     driverClassName: org.postgresql.Driver
-
+server:
+  port: 9980
 # pogledaj https://github.com/OKaluzny/spring-boot-rest-api-postgresql/blob/master/src/main/resources/application.yml
 # i ovo https://developer.okta.com/blog/2018/12/13/build-basic-app-spring-boot-jpa
