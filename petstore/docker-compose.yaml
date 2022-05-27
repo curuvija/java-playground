@@ -26,12 +26,23 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=admin
       - PGADMIN_LISTEN_ADDRESS=0.0.0.0
       - PGADMIN_SERVER_JSON_FILE=/pgadmin4/servers.json
-  liquibase:
-     image: liquibase/liquibase
-     container_name: liquibase
-     depends_on:
-      - db
-     hostname: liquibase
-     volumes:
-        - ./src/main/resources/db/changelog/db.changelog-master.xml:/liquibase/changelog.xml
-     command: --url=jdbc:postgresql://db:5432/petstore?user=admin&password=admin --changeLogFile=changelog.xml update
+  # have in mind that migration is already done with something in sprinboot so you should disable it and leave only liquibase
+  # liquibase fails probably because some of the scripts cannot be executed inside container
+  # liquibase:
+  #    image: liquibase/liquibase
+  #    container_name: liquibase
+  #    depends_on:
+  #     - db
+  #    hostname: liquibase
+  #    volumes:
+  #       - ./src/main/resources/db/changelog/db.changelog-master.xml:/liquibase/changelog.xml
+  #       - ./scripts/liquibase_policy_init.sh:/liquibase/liquibase_policy_init.sh:ro
+  #       - ./scripts/nc.sh:/liquibase/nc.sh:ro
+  #       - ./scripts/wait_for_port.sh:/liquibase/wait_for_port.sh:ro
+  #    entrypoint: ./wait_for_port.sh
+  #    #command: --url=jdbc:postgresql://db:5432/petstore?user=admin&password=admin --changeLogFile=changelog.xml update
+  #    command: [
+  #            '-c',
+  #              './liquibase_policy_init.sh',
+  #              'mariadb', '3306'
+  #             ]

@@ -16,10 +16,8 @@
 			<column name="name" type="varchar(250)">
 				<constraints unique="false" />
 			</column>
-			<column name="fully_paid" type="boolean" defaultValueBoolean="false"></column>
 		</createTable>
 		<addAutoIncrement tableName="locations" columnName="id" columnDataType="bigint" startWith="1" incrementBy="1" />
 		<createSequence sequenceName="hibernate_sequence" incrementBy="1" startValue="1" />
-		<addForeignKeyConstraint baseTableName="item" baseColumnNames="house_id" constraintName="item_house_id_fk" referencedTableName="house" referencedColumnNames="id" />
 	</changeSet>
 </databaseChangeLog>
