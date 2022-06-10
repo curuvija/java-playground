@@ -18,3 +18,11 @@ public class PetstoreApplication {
 		return "Hello World";
 	}
 }
+
+// TODO: Finish creating models https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#data.sql.jpa-and-spring-data
+// TODO: Configure hibernate https://www.tutorialspoint.com/hibernate/hibernate_configuration.htm
+
+// REPOSITORY CREATION
+
+// TODO: Clean architecture https://www.baeldung.com/spring-boot-hibernate
+// TODO: https://www.javadevjournal.com/spring-boot/spring-boot-with-hibernate/

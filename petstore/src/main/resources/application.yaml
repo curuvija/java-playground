@@ -7,8 +7,13 @@ spring:
   jpa:
     database: postgresql
     show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL9Dialect
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update # this can be create, create-drop, validate, update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
   datasource:
     url: jdbc:postgresql://localhost:5432/petstore
     username: admin
