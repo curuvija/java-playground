@@ -4,11 +4,9 @@ import com.example.petstore.exception.ResourceNotFoundException;
 import com.example.petstore.model.Customer;
 import com.example.petstore.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.ResourceAccessException;
 
 import java.util.HashMap;
 import java.util.List;
@@ -23,21 +21,24 @@ public class CustomerController {
     @Autowired
     private CustomerRepository customerRepository;
 
+    //TODO: Fix function name to reflect customer and not employee
     // get customers
     @GetMapping("customers")
-    public List<Customer> getAllEmployee() {
+    public List<Customer> getAllCustomer() {
         return this.customerRepository.findAll();
     }
+
+    //TODO: Fix function name to reflect customer and not employee
     // get customer by id
     @GetMapping("/customers/{id}")
-    public ResponseEntity<Customer> getEmployeeById(@PathVariable(value = "id") Long customerId) throws ResourceNotFoundException {
+    public ResponseEntity<Customer> getCustomerById(@PathVariable(value = "id") Long customerId) throws ResourceNotFoundException {
         Customer customer = customerRepository.findById(customerId)
                 .orElseThrow(() -> new ResourceNotFoundException("Customer not found for this id :: " + customerId));
         return ResponseEntity.ok().body(customer);
     }
 
     // save customer
-    @PostMapping("customers")
+    @PostMapping("/customers")
     public Customer createCustomer(@RequestBody Customer customer) {
         return this.customerRepository.save(customer);
     }
@@ -56,6 +57,7 @@ public class CustomerController {
 
         return ResponseEntity.ok(this.customerRepository.save(customer));
     }
+
     // delete customer
     @DeleteMapping("/customers/{id}")
     public Map<String, Boolean> deleteCustomer(@PathVariable(value = "id") Long customerId) throws ResourceNotFoundException {

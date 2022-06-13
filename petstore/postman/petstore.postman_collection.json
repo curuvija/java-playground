@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "f2fd0a6d-69a9-4392-9912-6f37a329adf2",
+		"name": "petstore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "customers",
+			"item": [
+				{
+					"name": "getAllCustomer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}:{{SERVER_PORT}}/api/v1/customers",
+							"host": [
+								"{{SERVER}}"
+							],
+							"port": "{{SERVER_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomerById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}:{{SERVER_PORT}}/api/v1/customers/1",
+							"host": [
+								"{{SERVER}}"
+							],
+							"port": "{{SERVER_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"pera@live.com\",\r\n    \"firstName\": \"Pera\",\r\n    \"lastName\": \"Peric\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}:{{SERVER_PORT}}/api/v1/customers/",
+							"host": [
+								"{{SERVER}}"
+							],
+							"port": "{{SERVER_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"pera@live.com\",\r\n    \"firstName\": \"Pera\",\r\n    \"lastName\": \"Peric\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}:{{SERVER_PORT}}/api/v1/customers/3",
+							"host": [
+								"{{SERVER}}"
+							],
+							"port": "{{SERVER_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
