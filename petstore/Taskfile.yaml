@@ -1,0 +1,10 @@
+version: 3
+
+tasks:
+  app:debug:
+    cmds:
+      - mvn spring-boot:run --debug
+
+  app:run:
+    cmds:
+      - mvn spring-boot:run

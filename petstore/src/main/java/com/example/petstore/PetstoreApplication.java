@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 // TODO: Clean architecture https://www.baeldung.com/spring-boot-hibernate
 // TODO: https://www.javadevjournal.com/spring-boot/spring-boot-with-hibernate/
+// TODO: Add auditing model -> https://www.callicoder.com/spring-boot-jpa-hibernate-postgresql-restful-crud-api-example/#1-auditmodel
 
 @SpringBootApplication
 @RestController
