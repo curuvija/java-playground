@@ -3,7 +3,6 @@ package com.example.petstore.model;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
-import java.util.List;
 
 
 @Entity
