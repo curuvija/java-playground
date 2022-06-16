@@ -21,14 +21,12 @@ public class CustomerController {
     @Autowired
     private CustomerRepository customerRepository;
 
-    //TODO: Fix function name to reflect customer and not employee
     // get customers
     @GetMapping("customers")
     public List<Customer> getAllCustomer() {
         return this.customerRepository.findAll();
     }
 
-    //TODO: Fix function name to reflect customer and not employee
     // get customer by id
     @GetMapping("/customers/{id}")
     public ResponseEntity<Customer> getCustomerById(@PathVariable(value = "id") Long customerId) throws ResourceNotFoundException {
