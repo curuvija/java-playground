@@ -62,4 +62,20 @@ public class CustomerRespositoryTests {
         assertEquals("Petrovic", finalCustomer.getLastName());
         assertEquals("something@hotmail.com", finalCustomer.getEmail());
     }
+
+    @Test
+    public void testDeleteCustomer() {
+        Long id = 1L;
+        Customer customer = new Customer();
+        customer.setFirstName("Milos");
+        customer.setLastName("Curuvija");
+        customer.setEmail("curuvija@live.com");
+        this.customerRepository.save(customer);
+
+        assertDoesNotThrow(
+                () -> {
+                    this.customerRepository.deleteById(id);
+                }
+        );
+    }
 }
