@@ -24,7 +24,7 @@ public class CustomerControllerIntegrationTests {
     @Autowired
     private WebTestClient webClient;
 
-    @Bean
+/*    @Bean
     //@Profile("integration")
     public DataSource dataSource() {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -34,7 +34,7 @@ public class CustomerControllerIntegrationTests {
         dataSource.setPassword("admin");
 
         return dataSource;
-    }
+    }*/
 
     @Test
     void createCustomer() {

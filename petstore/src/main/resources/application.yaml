@@ -19,6 +19,12 @@ spring:
     username: admin
     password: admin
     driverClassName: org.postgresql.Driver
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
 server:
   port: 9980
 # pogledaj https://github.com/OKaluzny/spring-boot-rest-api-postgresql/blob/master/src/main/resources/application.yml
